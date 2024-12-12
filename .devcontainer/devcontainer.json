@@ -3,6 +3,8 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
+    "workspaceFolder": "/home/vscode/workspace/mikanos-book",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/workspace/mikanos-book,type=bind,consistency=cached",
     "mounts": [
         "type=bind,source=${localEnv:HOME}/.Xauthority,target=/root/.Xauthority"
     ],

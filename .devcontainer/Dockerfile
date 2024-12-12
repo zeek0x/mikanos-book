@@ -29,4 +29,7 @@ RUN cd $HOME; \
     sed -i 's/python3-distutils/python3-setuptools/' ansible_provision.yml; \
     ansible-playbook -K -i ansible_inventory ansible_provision.yml  --extra-vars "ansible_become_pass=password"
 
+RUN mkdir -p $HOME/workspace; cd $HOME/workspace; \
+    git clone https://github.com/uchan-nos/mikanos.git;
+
 CMD ["/bin/bash"]
