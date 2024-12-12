@@ -27,6 +27,8 @@ $ qemu-system-x86_64 \
 $ $HOME/osbook/devenv/run_qemu.sh BOOTX64.EFI
 ```
 
+![](./img/1.4.a.png)
+
 # 1.9 C言語でハローワールド
 
 clang で COFF 形式のオブジェクトファイルを出力し、lld-link で UEFI 用の PE ファイルを出力する。
@@ -36,8 +38,10 @@ $ clang -target x86_64-pc-win32-coff -mno-red-zone -fno-stack-protector -fshort-
 $ lld-link /subsystem:efi_application /entry:EfiMain /out:hello.efi hello.o
 ```
 
-- C言語のソースファイルから生成された実行ファイルで起動可能
+C言語のソースファイルから生成された実行ファイルで起動可能、表示する文字は少し変えた
 
 ```console
 $ $HOME/osbook/devenv/run_qemu.sh hello.efi
 ```
+
+![](./img/1.9.a.png)
