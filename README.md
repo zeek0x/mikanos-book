@@ -48,7 +48,7 @@ $ xhost + localhost
 $ devcontainer open .
 ```
 
-## バイナリエディタ (Okteta)
+### バイナリエディタ (Okteta) を起動
 
 - コンテナから以下のコマンドを実行
 
@@ -59,3 +59,17 @@ $ okteta
 > [!TIP]
 > - ウィンドウ右下端の 〼 のような部分をドラッグすることでウィンドウサイズの調整を行うことができる
 > - Ctrl + + , Ctrl + - でエディタパネルの拡大縮小ができる
+
+## トラブルシューティング
+
+### XQuartz が起動しない
+
+起動しても数秒でアプリケーションが終了してしまう場合は `.xinitrc` を削除（または退避）させて再起動する。
+
+### xhost:  unable to open display
+
+`xhost + localhost` を実行時にこのエラーが表示される場合、`DISPLAY` 環境変数が設定されてないことが原因なので設定する。
+
+```console
+$ export DISPLAY=:0.0
+```
