@@ -73,3 +73,17 @@ $ okteta
 ```console
 $ export DISPLAY=:0.0
 ```
+
+### bash: build: command not found
+
+`build` は edksetup.sh が提供しているので読み込み直す
+
+```
+$ cd $HOME/edk2
+$ source edksetup.sh
+Loading previous configuration from /home/vscode/edk2/Conf/BuildEnv.sh
+Using EDK2 in-source Basetools
+WORKSPACE: /home/vscode/edk2
+EDK_TOOLS_PATH: /home/vscode/edk2/BaseTools
+CONF_PATH: /home/vscode/edk2/Conf
+```
