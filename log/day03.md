@@ -102,3 +102,132 @@ Disassembly of section .data:
 > [!TIP]
 > 書籍とアドレスが違うのはなぜ？
 > jmp のアドレスが相対値であり、表示のタイミングで絶対値に変換しているから
+
+# 3.3 初めてのカーネル (osbook_day03a)
+
+カーネルファイルをビルドする。
+
+```console
+$ cd $HOME/workspace/mikanos
+$ git checkout osbook_day03a
+$ cd kernel
+$ clang++ -O2 -Wall -g --target=x86_64-elf -ffreestanding -mno-red-zone -f
+no-exceptions -fno-rtti -std=c++17 -c main.cpp
+$ ld.lld --entry KernelMain -z norelro --image-base 0x10000 --static -o kernel.elf main.o
+```
+
+- `readelf` コマンドで見てみる
+
+```
+$ readelf -h kernel.elf
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x11120
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          1032 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         4
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 12
+```
+
+`Entry point address:               0x11120` が書籍では `0x100000` となっている。
+[レポート](https://github.com/uchan-nos/os-from-zero/issues/41)によると、ダメらしい。
+報告の中にある `-z separate-code` を試す。
+
+```console
+$ ld.lld --entry KernelMain -z norelro -z separate-code --image-base 0x100
+000 --static -o kernel.elf main.o
+$ readelf -h kernel.elf
+...
+```
+
+オプションなしとの差分
+
+```diff
+2c2
+<   Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+---
+>   Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+11c11
+<   Entry point address:               0x11120
+---
+>   Entry point address:               0x101000
+13c13
+<   Start of section headers:          1032 (bytes into file)
+---
+>   Start of section headers:          8920 (bytes into file)
+```
+
+`0x10000` ではないがいいんだろうか...
+起動する。
+
+```console
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/3.3.a.png)
+
+```
+(qemu) info registers
+
+CPU#0
+RAX=0000000000100000 RBX=000000003f21bf18 RCX=0000000000000000 RDX=0000000000000000
+RSI=000000003feac8a0 RDI=000000003feac9d8 RBP=000000003fea8820 RSP=000000003fea8820
+R8 =000000003fea8794 R9 =000000003fb7b48f R10=000000003fbcd018 R11=fffffffffffffffc
+R12=000000003f21ba20 R13=000000003feac8a0 R14=000000003fea9140 R15=000000003e67a91e
+RIP=0000000000101011 RFL=00000046 [---Z-P-] CPL=0 II=0 A20=1 SMM=0 HLT=1
+```
+
+RIP アドレスのアドレスを参照する。
+
+```console
+(qemu) x /2xb 0x0000000000101011
+0000000000101011: 0xeb 0xfd
+
+---
+
+$ echo -ne "\xeb\xfd" > bytes.bin
+$ objdump -D -b binary -m i386:x86-64 bytes.bin
+
+bytes.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:   eb fd                   jmp    0xffffffffffffffff
+```
+
+相対アドレスなので、0xffff... は 0x0000... の 1 バイト前を指してる。
+
+```console
+(qemu) x /3xb 0x0000000000101010
+0000000000101010: 0xf4 0xeb 0xfd
+
+---
+
+$ objdump -D -b binary -m i386:x86-64 bytes.bin
+
+bytes.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:   f4                      hlt
+   1:   eb fd                   jmp    0x0
+```
+
+jmp 先で hlt 命令が指定されている。
