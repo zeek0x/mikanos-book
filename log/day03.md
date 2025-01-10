@@ -147,8 +147,7 @@ ELF Header:
 報告の中にある `-z separate-code` を試す。
 
 ```console
-$ ld.lld --entry KernelMain -z norelro -z separate-code --image-base 0x100
-000 --static -o kernel.elf main.o
+$ ld.lld --entry KernelMain -z norelro -z separate-code --image-base 0x100000 --static -o kernel.elf main.o
 $ readelf -h kernel.elf
 ...
 ```
@@ -231,3 +230,43 @@ Disassembly of section .data:
 ```
 
 jmp 先で hlt 命令が指定されている。
+
+# 3.4 ブートローダからピクセルを描く (osbook_day03b)
+
+```console
+$ cd $HOME/workspace/mikanos
+$ git checkout osbook_day03b
+$ cd $HOME/edk2
+$ build
+$HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/3.4.a.png)
+
+# 3.5 カーネルからピクセルを描く (osbook_day03c)
+
+チェックアウトする。
+
+```console
+$ cd $HOME/workspace/mikanos
+$ git checkout osbook_day03c
+```
+
+ビルドする。
+
+```
+$ source $HOME/osbook/devenv/buildenv.sh
+$ cd kernel
+$ clang++ $CPPFLAGS -O2 --target=x86_64-elf -fno-exceptions -ffreestanding -c main.cpp
+$ ld.lld $LDFLAGS --entry KernelMain -z norelro -z separate-code --image-base 0x100000 --static -o kernel.elf main.o
+```
+
+実行する。
+
+```console
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/3.5.a.png)
