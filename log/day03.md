@@ -270,3 +270,17 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/3.5.a.png)
+
+# 3.6 エラー処理を使用 (osbook_day03d)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day03d
+$ clang++ $CPPFLAGS -O2 --target=x86_64-elf -fno-exceptions -ffreestanding -c main.cpp
+$ ld.lld $LDFLAGS --entry KernelMain -z norelro -z separate-code --image-base 0x100000 --static -o kernel.elf main.o
+$ cd $HOME/edk2
+$ build
+$ HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+画面は変わらないので省略
