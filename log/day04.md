@@ -34,3 +34,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 画面は変わらないので省略
+
+# 4.2 ピクセルを自在に描く (osbook_day04b)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day04b
+$ make
+$ $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/4.2.a.png)
