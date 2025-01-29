@@ -47,3 +47,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/4.2.a.png)
+
+# 4.3 C++ の機能を使って書き直す (osbook_day04c)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day04c
+$ make
+$ cd $HOME/edk2/
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/4.3.a.png)
