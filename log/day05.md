@@ -18,3 +18,18 @@ $ git stash pop stash@{0}
 ```
 
 - 表示は同じなので画像は省略
+
+# 5.3 フォントを増やそう (osbook_day05c)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel/
+$ git checkout osbook_day05c
+$ ../tools/makefont.py -o hankaku.bin hankaku.txt
+$ objcopy -I binary -O elf64-x86-64 -B i386:x86-64 hankaku.bin hankaku.o
+$ make
+$ cd $HOME/edk2
+$ build
+$
+```
+
+![](./img/5.3.a.png)
