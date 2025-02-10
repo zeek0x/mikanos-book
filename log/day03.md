@@ -176,7 +176,7 @@ $ readelf -h kernel.elf
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/3.3.a.png)
+![](./img/3.3.png)
 
 ```
 (qemu) info registers
@@ -241,7 +241,7 @@ $ build
 $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/3.4.a.png)
+![](./img/3.4.png)
 
 # 3.5 カーネルからピクセルを描く (osbook_day03c)
 
@@ -269,7 +269,7 @@ $ build
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/3.5.a.png)
+![](./img/3.5.png)
 
 # 3.6 エラー処理を使用 (osbook_day03d)
 

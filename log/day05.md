@@ -32,7 +32,7 @@ $ build
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/5.3.a.png)
+![](./img/5.3.png)
 
 # 5.4 文字列描画とsprintf() (osbook_day05d)
 
@@ -45,7 +45,7 @@ $ build
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/5.4.a.png)
+![](./img/5.4.png)
 
 # 5.5 コンソールクラス (osbook_day05e)
 
@@ -58,7 +58,7 @@ $ build
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/5.5.a.png)
+![](./img/5.5.png)
 
 # 5.6 printk() (osbook_day05f)
 
@@ -71,4 +71,4 @@ $ build
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/5.6.a.png)
+![](./img/5.6.png)

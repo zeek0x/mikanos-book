@@ -88,7 +88,7 @@ Build total time: 00:00:01
 
 何度か起動し直したり、起動後にしばらく待つと表示される。
 
-![](./img/2.2.a.png)
+![](./img/2.2.png)
 
 # 2.7 メモリマップのファイルへの保存
 
@@ -103,6 +103,8 @@ $ build
 ```console
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi
 ```
+
+![](./img/2.7.png)
 
 ```console
 $ mkdir -p mnt

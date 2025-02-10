@@ -46,7 +46,7 @@ $ build
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/4.2.a.png)
+![](./img/4.2.png)
 
 # 4.3 C++ の機能を使って書き直す (osbook_day04c)
 
@@ -59,7 +59,7 @@ $ build
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-![](./img/4.3.a.png)
+![](./img/4.3.png)
 
 # 4.5 ローダを改良する (osbook_day04d)
 

@@ -27,7 +27,7 @@ $ qemu-system-x86_64 \
 $ $HOME/osbook/devenv/run_qemu.sh BOOTX64.EFI
 ```
 
-![](./img/1.4.a.png)
+![](./img/1.4.png)
 
 # 1.9 C言語でハローワールド
 
@@ -44,4 +44,4 @@ C言語のソースファイルから生成された実行ファイルで起動�
 $ $HOME/osbook/devenv/run_qemu.sh hello.efi
 ```
 
-![](./img/1.9.a.png)
+![](./img/1.9.png)
