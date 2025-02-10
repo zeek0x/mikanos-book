@@ -46,3 +46,29 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/5.4.a.png)
+
+# 5.5 コンソールクラス (osbook_day05e)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day05e
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/5.5.a.png)
+
+# 5.6 printk() (osbook_day05f)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day05f
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/5.6.a.png)
