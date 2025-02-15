@@ -2,7 +2,7 @@
 
 ```console
 $ cd $HOME/workspace/mikanos/kernel
-$ git checkout osbook_day05f
+$ git checkout osbook_day06a
 $ make
 $ cd $HOME/edk2
 $ build
@@ -11,4 +11,15 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 
 ![](./img/6.1.png)
 
-# 6.2 USB ホストドライバ
+# 6.3 PCIデバイスの探索 (osbook_day06b)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day06b
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/6.3.png)
