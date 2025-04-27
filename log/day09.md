@@ -62,3 +62,17 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/9.6.png)
+
+
+# 9.7 重ね合わせ処理の高速化 (osbook_day09e)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day09e
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/9.7.png)
