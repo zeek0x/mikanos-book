@@ -11,7 +11,7 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 
 ![](./img/10.1.png)
 
-# 10.2 もっとマウス (osbook_day10a)
+# 10.2 もっとマウス (osbook_day10b)
 
 ```console
 $ cd $HOME/workspace/mikanos/kernel
@@ -23,3 +23,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/10.2.png)
+
+# 10.3 高速カウンタ (osbook_day010c)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day10c
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/10.3.png)
