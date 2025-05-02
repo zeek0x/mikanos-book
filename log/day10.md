@@ -124,3 +124,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/10.6.png)
+
+# 10.7 ウィンドウだけドラッグ移動 (osbook_day10g)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day10g
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/10.7.png)
