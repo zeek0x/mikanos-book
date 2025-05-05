@@ -15,7 +15,7 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 
 ```console
 $ cd $HOME/workspace/mikanos/kernel
-$ git checkout osbook_day11a
+$ git checkout osbook_day11b
 $ make
 $ cd $HOME/edk2
 $ build
@@ -24,3 +24,15 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 
 ![](./img/11.2.png)
 
+# 11.3 細かく時間を計る (osbook_day11c)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day11c
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/11.3.png)
