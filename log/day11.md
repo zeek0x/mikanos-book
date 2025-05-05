@@ -10,3 +10,17 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 画面は変わらないので省略
+
+# 11.2 タイマ割り込み (osbook_day11b)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day11a
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/11.2.png)
+
