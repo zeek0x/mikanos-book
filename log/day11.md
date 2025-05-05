@@ -37,7 +37,8 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 
 ![](./img/11.3.png)
 
-## 11.4 複数のタイマとタイムアウト通知 (osbook_day11d)
+# 11.4 複数のタイマとタイムアウト通知 (osbook_day11d)
+
 ```console
 $ cd $HOME/workspace/mikanos/kernel
 $ git checkout osbook_day11d
@@ -48,3 +49,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/11.4.png)
+
+# 11.5 ACPI PMタイマとRSDP (osbook_day11e)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day11e
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+画面は変わらないので省略
