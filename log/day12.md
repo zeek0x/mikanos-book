@@ -10,3 +10,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 画面は変わらないので省略
+
+# 12.2 ACPI PM タイマを使う (osbook_day12b)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day12b
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/12.2.png)
