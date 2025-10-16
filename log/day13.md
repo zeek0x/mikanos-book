@@ -10,3 +10,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/13.2.png)
+
+# 13.3 コンテキストスイッチの自動化 (osbook_day13b)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day13b
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+図は省略
