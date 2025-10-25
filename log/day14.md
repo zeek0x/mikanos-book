@@ -23,3 +23,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 画像は省略
+
+# 14.4 タスクに優先度を付ける (osbook_day14c)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day14c
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+画像は省略
