@@ -2,7 +2,7 @@
 
 ```console
 $ cd $HOME/workspace/mikanos/kernel
-$ git checkout osbook_day14d
+$ git checkout osbook_day15a
 $ make
 $ cd $HOME/edk2
 $ build
@@ -10,3 +10,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 画像は省略
+
+# 15.2 アクティブウィンドウ (osbook_day15b)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day15b
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/15.2.png)
