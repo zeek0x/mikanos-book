@@ -36,3 +36,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](./img/15.3.png)
+
+# 15.4 描画の高速化　（osbook_day15d）
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day15d
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](./img/15.4.png)
