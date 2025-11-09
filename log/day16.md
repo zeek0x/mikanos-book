@@ -49,3 +49,17 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](img/16.4.png)
+
+
+# 16.5 コマンド履歴化 (osbook_day16e)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day16e
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](img/16.5.png)
