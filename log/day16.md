@@ -36,3 +36,16 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](img/16.3.png)
+
+# 16.4 lspci コマンド (osbook_day16d)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day16d
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](img/16.4.png)
