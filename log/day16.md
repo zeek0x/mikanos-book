@@ -63,3 +63,17 @@ $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ```
 
 ![](img/16.5.png)
+
+
+# 16.6 省電力化 (osbook_day16f)
+
+```console
+$ cd $HOME/workspace/mikanos/kernel
+$ git checkout osbook_day16f
+$ make
+$ cd $HOME/edk2
+$ build
+$ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
+```
+
+![](img/16.6.png)
