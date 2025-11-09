@@ -9,7 +9,7 @@ $ build
 $ $HOME/osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/workspace/mikanos/kernel/kernel.elf
 ```
 
-画像は省略
+![](img/14.1.png)
 
 # 14.2 イベントが来たら起床する (osbook_day14b)
 
