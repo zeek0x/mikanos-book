@@ -46,3 +46,11 @@ Disassembly of section .data:
 ```
 
 rpn コマンドを実行すると終了してしまう。う〜む。
+
+# 18.4 標準ライブラリ (osbook_day18d)
+
+```console
+./build.sh run
+```
+
+同様に rpn コマンドを実行すると終了してしまう。
