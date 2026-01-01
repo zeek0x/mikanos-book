@@ -38,3 +38,11 @@ Disassembly of section .data:
 ```
 
 ![](./img/18.2.png)
+
+# 18.3 C++で計算機 (osbook_day18c)
+
+```console
+./build.sh run
+```
+
+rpn コマンドを実行すると終了してしまう。う〜む。
